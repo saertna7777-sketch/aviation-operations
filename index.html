@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#071b2f">
+  <meta name="description" content="Fast, offline-ready operational contact directory.">
+  <title>Operations Contacts</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contacts">Skip to contacts</a>
+  <header class="masthead">
+    <div class="brand-mark" aria-hidden="true">OPS</div>
+    <div>
+      <p class="eyebrow">Greek Airport Network</p>
+      <h1>Operations Contacts</h1>
+      <p class="subtitle">Quick Operational Reference</p>
+    </div>
+    <button id="installButton" class="install-button" type="button" hidden>Install app</button>
+  </header>
+
+  <main>
+    <section class="toolbar" aria-label="Search and filters">
+      <label class="search-label" for="searchInput">Search contacts</label>
+      <div class="search-wrap">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.15A7.5 7.5 0 1 1 4 11.5a7.5 7.5 0 0 1 15 0Z"/></svg>
+        <input id="searchInput" type="search" autocomplete="off" placeholder="Name, company, role or number…">
+        <button id="clearSearch" class="clear-button" type="button" aria-label="Clear search" hidden>×</button>
+      </div>
+      <div id="filters" class="filters" aria-label="Contact filters"></div>
+    </section>
+
+    <div class="status-row">
+      <p id="resultCount" aria-live="polite">Loading contacts…</p>
+      <p id="dataStatus" class="data-status" hidden></p>
+    </div>
+
+    <section id="emptyState" class="empty-state" hidden>
+      <div class="empty-icon" aria-hidden="true">⌕</div>
+      <h2 id="emptyTitle">No contacts found</h2>
+      <p id="emptyText">Try changing your search or filters.</p>
+      <button id="resetFilters" class="secondary-button" type="button">Clear filters</button>
+    </section>
+
+    <div id="contacts" class="contact-groups" aria-live="polite"></div>
+  </main>
+
+  <footer>
+    <p>For operational use only.</p>
+    <p id="updatedAt"></p>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <script src="./app.js" defer></script>
+</body>
+</html>
