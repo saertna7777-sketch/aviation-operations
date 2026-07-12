@@ -159,5 +159,5 @@ window.addEventListener("beforeinstallprompt", event => { event.preventDefault()
 els.install.addEventListener("click", async () => { if (!installPrompt) return; await installPrompt.prompt(); installPrompt=null; els.install.hidden=true; });
 window.addEventListener("appinstalled", () => { els.install.hidden=true; toast("App installed"); });
 
-if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js").catch(error => console.warn("Offline mode unavailable", error)));
+if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js?v=5").catch(error => console.warn("Offline mode unavailable", error)));
 loadContacts();
