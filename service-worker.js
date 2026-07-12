@@ -1,4 +1,4 @@
-const CACHE_NAME = "operations-contacts-v3";
+const CACHE_NAME = "operations-contacts-v4";
 const APP_SHELL = ["./", "./index.html", "./styles.css", "./app.js", "./manifest.json", "./contacts.json", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", event => {

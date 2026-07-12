@@ -95,8 +95,8 @@ function card(row, index) {
     </div></div>` : "";
   return `<article class="contact-card" aria-labelledby="contact-${index}"><div class="card-body">
     <div class="card-top"><div><h3 id="contact-${index}" class="contact-name">${escapeHTML(title)}</h3>${company ? `<p class="company">${escapeHTML(company)}</p>` : ""}</div>${clean(row.category) ? `<span class="badge">${escapeHTML(row.category)}</span>` : ""}</div>
-    <ul class="details">${detail("Role",row.role)}${detail("Station",row.station)}${detail("Rep.",row.representativeType)}${detail("Email",row.email,true)}</ul>
-    ${phonePanel}${notes ? `<details class="notes"><summary>Additional notes</summary><p>${escapeHTML(notes)}</p></details>` : ""}
+    <ul class="details">${detail("Role",row.role)}${detail("Station",row.station)}${detail("Rep.",row.representativeType)}${detail("Contact / info",notes)}${detail("Email",row.email,true)}</ul>
+    ${phonePanel}
   </div></article>`;
 }
 
